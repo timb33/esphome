@@ -2,10 +2,10 @@ esphome:
   name: esp32s2-led-test
 
 esp32:
-  board: esp32-s2-devkitm-1
-  variant: esp32s2
+  board: esp32-s2-saola-1
   framework:
     type: arduino
+
 
 wifi:
   ssid: "BlackRon2"
