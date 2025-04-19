@@ -1,0 +1,24 @@
+esphome:
+  name: esp32s2-led-test
+
+esp32:
+  board: esp32-s2-devkitm-1
+  variant: esp32s2
+  framework:
+    type: arduino
+
+wifi:
+  ssid: "BlackRon2"
+  password: "Monmurphykey123!"
+
+logger:
+
+output:
+  - platform: gpio
+    pin: GPIO18
+    id: led
+
+light:
+  - platform: binary
+    name: "Onboard LED"
+    output: led
