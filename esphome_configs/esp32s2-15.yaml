@@ -10,6 +10,16 @@ esp32:
 # Enable logging
 logger:
 
+output:
+  - platform: gpio
+    pin: GPIO15
+    id: led
+
+light:
+  - platform: binary
+    name: "Onboard LED"
+    output: led
+
 # Enable Home Assistant API
 api:
   encryption:
