@@ -8,17 +8,19 @@ esp32:
 
 
 wifi:
-  ssid: "BlackRon2"
-  password: "Monmurphykey123!"
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
 
 logger:
 
 output:
   - platform: gpio
-    pin: GPIO18
+    pin: GPIO15
     id: led
 
 light:
   - platform: binary
     name: "Onboard LED"
     output: led
+
+
