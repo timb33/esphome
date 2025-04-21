@@ -10,6 +10,20 @@ esp32:
 # Enable logging
 logger:
 
+i2c:
+  sda: GPIO35
+  scl: GPIO33
+  scan: true
+
+sensor:
+  - platform: bmp280_i2c
+    temperature:
+      name: "BMP280 Temperature"
+    pressure:
+      name: "BMP280 Pressure"
+    address: 0x76
+    update_interval: 60s
+
 output:
   - platform: gpio
     pin: GPIO15
