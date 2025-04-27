@@ -1,6 +1,6 @@
 esphome:
-  name: esp32s2-213
-  friendly_name: esp32s2-213
+  name: "esp32s2-213"
+  friendly_name: "esp32s2-213"
 
 esp32:
   board: esp32-s2-saola-1
@@ -10,23 +10,52 @@ esp32:
 # Enable logging
 logger:
 
+i2c:
+  sda: GPIO35
+  scl: GPIO33
+  scan: true
+
+sensor:
+  - platform: bmp280_i2c
+    temperature:
+      name: "BMP280 Temperature"
+    pressure:
+      name: "BMP280 Pressure"
+    address: 0x76
+    update_interval: 60s
+
+output:
+  - platform: gpio
+    pin: GPIO15
+    id: led
+
+light:
+  - platform: binary
+    name: "Onboard LED"
+    output: led
+
 # Enable Home Assistant API
 api:
   encryption:
-    key: "PEvH5ryvmyrV61iYqVfJ3igOKUGfknIxCqHY7QBQe/o="
+    key: "IjMHx+98nE0YWQrGrZozJGitZj6OZNAPv12I1Fs39wM="
 
 ota:
   - platform: esphome
-    password: "bd4aca77184432d2d2993e7f305b5bdf"
+    password: "418aecf27650a653b18dfe5168ac7b76"
 
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
+  manual_ip:
+    # https://esphome.io/components/wifi.html#manual-ips
+    static_ip: 192.168.0.213
+    gateway: 192.168.0.1
+    subnet: 255.255.255.0
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Esp32S2-213 Fallback Hotspot"
-    password: "3Uu26j12uFnV"
+    ssid: "Esp32S2-16 Fallback Hotspot"
+    password: "ms7FAyp1oh1e"
 
 captive_portal:
     

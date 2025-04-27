@@ -1,0 +1,30 @@
+esphome:
+  name: livingroom2
+
+esp32:
+  board: esp32-s2-saola-1
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: ""
+
+ota:
+  - platform: esphome
+    password: ""
+
+wifi:
+  ssid: "WhiteRon2"
+  password: "Monmurphykey123!"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Livingroom2 Fallback Hotspot"
+    password: "WUfn1raCz82Z"
+
+captive_portal:
+    

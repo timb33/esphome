@@ -1,6 +1,6 @@
 esphome:
-  name: "esp32s2-216"
-  friendly_name: "esp32s2-216"
+  name: esp32s2-219
+  friendly_name: esp32s2-219
 
 esp32:
   board: esp32-s2-saola-1
@@ -37,25 +37,25 @@ light:
 # Enable Home Assistant API
 api:
   encryption:
-    key: "IjMHx+98nE0YWQrGrZozJGitZj6OZNAPv12I1Fs39wM="
+    key: "9WjjI0NRH9Tn1zyIxFmlAEyWO6q2dhladnk6x7mDsek="
 
 ota:
   - platform: esphome
-    password: "418aecf27650a653b18dfe5168ac7b76"
+    password: "f0b936a684cd074aa2b12efb66e477a0"
 
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
   manual_ip:
     # https://esphome.io/components/wifi.html#manual-ips
-    static_ip: 192.168.0.216
+    static_ip: 192.168.0.219
     gateway: 192.168.0.1
     subnet: 255.255.255.0
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Esp32S2-16 Fallback Hotspot"
-    password: "ms7FAyp1oh1e"
+    ssid: "Esp32S2-219 Fallback Hotspot"
+    password: "xxIpZ9IZhQZ3"
 
 captive_portal:
     
